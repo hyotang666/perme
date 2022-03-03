@@ -20,7 +20,7 @@
 (defun get-memo (fun args)
   (let ((cache
          (let ((*package* (find-package :cl-user)))
-           (merge-pathnames (format nil "~A/~A" (name fun) (sxhash args))
+           (merge-pathnames (format nil "~S/~A" (name fun) (sxhash args))
                             *cache-dir*))))
     (if (probe-file cache)
         (values (cl-store:restore cache) t)
@@ -31,7 +31,7 @@
                   (ensure-directories-exist
                     (let ((*package* (find-package :cl-user)))
                       (merge-pathnames
-                        (format nil "~A/~A" (name fun) (sxhash args))
+                        (format nil "~S/~A" (name fun) (sxhash args))
                         *cache-dir*))))
   new)
 
@@ -62,7 +62,7 @@
        (progn
         (uiop:delete-directory-tree
           (let ((*package* (find-package :cl-user)))
-            (merge-pathnames (format nil "~A/" (name #',function-name))
+            (merge-pathnames (format nil "~S/" (name #',function-name))
                              *cache-dir*))
           :if-does-not-exist :ignore
           :validate t)
