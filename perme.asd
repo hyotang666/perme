@@ -3,6 +3,11 @@
 (defsystem "perme"
   :version
   "0.1.1"
+  :author "SATO Shinichi"
+  :description "PERsistent MEmoization."
+  :source-control (:git "git@github.com:hyotang666/perme")
+  :bug-tracker "https://github.com/hyotang666/perme/issues"
+  :license "MIT"
   :depends-on
   (
    "closer-mop" ; Wrapper of Meta Object Protocols.
