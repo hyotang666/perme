@@ -2,9 +2,13 @@
 (in-package :asdf)
 (defsystem "perme"
   :version
-  "0.0.0"
+  "0.1.0"
   :depends-on
-  nil
+  (
+   "closer-mop" ; Wrapper of Meta Object Protocols.
+   "cl-store"   ; Object serializer.
+   "uiop"       ; Utilities, implicitly depends on via asdf.
+   )
   :pathname
   "src/"
   :components
